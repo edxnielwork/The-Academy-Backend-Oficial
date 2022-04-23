@@ -9,11 +9,11 @@ const sendEmail = (req = request, resp = response) => {
 
 
     let config = nodeMailer.createTransport({
-        host: 'smtp.gmail.com',
-        post: 587,
+        host: 'mail.the-academy-dvr.com',
+        post: 465,
         auth: {
-            user: 'theacademy.dvr@gmail.com',
-            pass: '3dxuy3lvxl398@TA'
+            user: 'info@the-academy-dvr.com',
+            pass: '3dxuy3lvxl398@CC'
         }
     });
 
