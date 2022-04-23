@@ -11,7 +11,7 @@ const sendEmail = (req = request, resp = response) => {
     let config = nodeMailer.createTransport({
         host: 'smtp.gmail.com',
         post: 587,
-        secure: true,
+        secure: false,
         auth: {
             user: 'theacademy.dvr@gmail.com',
             pass: '3dxuy3lvxl398@TA'
