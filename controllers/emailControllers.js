@@ -7,7 +7,6 @@ const nodeMailer = require('nodemailer');
 const sendEmail = (req = request, resp = response) => {
     let body = req.body;
 
-
     let config = nodeMailer.createTransport({
         host: 'smtp.gmail.com',
         post: 587,
@@ -30,7 +29,6 @@ const sendEmail = (req = request, resp = response) => {
         return resp.json({
             ok: true,
             msg: result,
-
         });
     });
 }
