@@ -11,6 +11,7 @@ const sendEmail = (req = request, resp = response) => {
     let config = nodeMailer.createTransport({
         host: 'smtp.gmail.com',
         post: 587,
+        secure: true,
         auth: {
             user: 'theacademy.dvr@gmail.com',
             pass: '3dxuy3lvxl398@TA'
@@ -19,7 +20,7 @@ const sendEmail = (req = request, resp = response) => {
 
     const option = {
         from: 'The Academy',
-        subject: body.nombre,
+        subject: body.asunto,
         to: body.email,
         text: body.mensaje
     };
@@ -28,10 +29,13 @@ const sendEmail = (req = request, resp = response) => {
         if (error) return resp.json({ ok: false, msg: error });
         return resp.json({
             ok: true,
-            msg: result
+            msg: result,
+
         });
     });
 }
+
+
 module.exports = {
     sendEmail
 }
