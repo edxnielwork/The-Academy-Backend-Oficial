@@ -9,7 +9,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 
 app.use(require('./routes/sendRoutes'));
 
-app.set('port', 3000)
+app.set('port', process.env.PORT || 3000)
 
 app.listen(app.get('port'), () => {
     console.log('Escuchando: ' + app.get('port'));
